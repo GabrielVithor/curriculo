@@ -1,0 +1,315 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.box {
+    padding: 30px;
+}
+
+h2 {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    font-weight: normal;
+}
+
+main.grid {
+    grid-template-areas: "description data"
+        "knowledges tecnologies";
+    row-gap: 90px;
+    border: 2px solid #a84A80;
+    padding-top: 30px;
+    border-bottom: none;
+    border-top: none;
+}
+
+.about_description {
+    grid-area: description;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: #D87AC0 2px solid;
+    max-width: 300px;
+    color: black;
+}
+
+.about_description .profile {
+    width: 75%;
+}
+
+.about_description .profile img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #888;
+
+}
+
+.about_description p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    width: 90%;
+}
+
+.about_data {
+    grid-area: data;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.about_data table {
+    width: 100%;
+}
+
+.about_data table tr {
+    width: 100%;
+    display: grid;
+    height: 30px;
+    line-height: 30px;
+    grid-template-columns: 20% 60% auto;
+    gap: 20px;
+}
+
+.about_data table tr td {
+    width: 100%;
+    text-align: left;
+}
+
+.about_data table tr td:first-child {
+    color: #a84A80;
+    text-align: left;
+}
+
+.skills_knowledges {
+    grid-area: knowledges;
+    flex-direction: column;
+    justify-content: center;
+    border-right: #D87AC0 2px solid;
+    justify-content: start;
+}
+
+.skills_knowledges ul {
+    list-style-position: inside;
+}
+
+.skills_knowledges ul li {
+    width: 100%;
+}
+
+.skills_knowledges ul li p {
+    line-height: 30px;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.skills_tecnologies {
+    grid-area: tecnologies;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: start;
+}
+
+.skills_tecnologies table {
+    width: 100%;
+}
+
+.skills_tecnologies table tr {
+    width: 100%;
+    display: grid;
+    line-height: 50px;
+    gap: 15px;
+    grid-template-columns: 15% 60% 20%;
+}
+
+.skills_tecnologies table tr td:nth-child(3) {
+    text-align: right;
+}
+
+.skills_tecnologies table tr td span {
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    line-height: auto;
+    background-color: #a84A80;
+}
+
+.skills_tecnologies table tr td i {
+    height: 30px;
+    font-size: 30px;
+    text-align: right;
+    color: #424072;
+}
+
+.perc60 {
+    width: 60%;
+}
+
+.perc50 {
+    width: 50%;
+}
+
+.perc40 {
+    width: 40%;
+}
+
+.perc30 {
+    width: 30%;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #424072;
+    color: white;
+    padding: 0 15px;
+}
+
+@media screen and (max-width:768px) {
+    main.grid {
+        grid-template-areas: "description"
+            "data"
+            "knowledges"
+            "tecnologies";
+        gap: 0;
+        border: none;
+        padding: 0;
+    }
+   
+    .box {
+        padding: 60px 30px;
+    }
+
+    h2 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about_description {
+        width: 100%;
+        max-width: none;
+        border-right: none;
+        background-color: #D87AC0;
+        color: white;
+    }
+
+    .about_description .profile{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about_description .profile img{
+        width: 40%;
+    }
+
+    .about_description .profile p{
+        padding: 15px;
+        width: 100%;
+    }
+
+
+    .skills_knowledges {
+        max-width: none;
+        border-right: none;
+        background-color: #D87AC0;
+        color: white;
+    }
+
+    .skills_tecnologies table,.about_data table{
+max-width: 420px;
+    }
+
+    .skills_tecnologies table tr,.about_data table tr{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: normal;
+        height: auto;
+        gap: 0px;
+        margin-bottom: 30px;
+    }
+
+    .skills_tecnologies table tr td,.about_data table tr td{
+        width: auto;
+        margin-bottom: none;
+    }
+
+    .about_data table tr td:first-child{
+        width: 100%;
+        margin-bottom: none;
+    }
+
+    
+    .skills_tecnologies table tr td:first-child {
+        width: 100%;
+        margin-bottom: none;
+    }
+
+    .about_data table tr td:nth-child(2),.skills_tecnologies table tr td:nth-child(2) {
+        width: 75%;
+        margin-top: none;
+    }
+
+
+    .about_data table tr td:nth-child(3), .skills_tecnologies table tr td:nth-child(3) {
+        width: 25%;
+        margin-top: none;
+        text-align: right;       
+
+    }
+
+    .skills_knowledges{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .skills_knowledges ul{
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+    @media screen and (max-width:600px) {
+        .about_description .profile{
+            display: inline-block;
+            text-align: center;
+        }
+    
+        .about_description .profile img{
+            width: 60%;
+        }
+    }    
